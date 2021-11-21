@@ -56,3 +56,4 @@ int main()
 	std::cout << "Sum:" << sum << std::endl;
 	std::cout << "Count:" << count << std::endl;
 }
+
