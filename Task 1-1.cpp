@@ -1,6 +1,4 @@
-#define _Use_Math_Defines
 #include <iostream>
-#include <cmath>
 
 /**
 *	\brief Функция расчёта по заданной формуле.
@@ -38,11 +36,10 @@ int main()
 
 double getA(const double x, const double y, const double z)
 {
-	return exp(-y * z) * sin(x * z - y) - sqrt(abs(y * z + x));
+	return std::exp(-y * z) * std::sin(x * z - y) - std::sqrt(std::abs(y * z + x));
 }
 
 double getB(const double a, const double y, const double z)
 {
-	return y * sin(a * pow(z, 2) * cos(2 * z)) - 1;
+	return y * std::sin(a * std::pow(z, 2) * std::cos(2 * z)) - 1;
 }
-
