@@ -59,7 +59,6 @@ int main()
 	std::cout << "Введите второе число = ";
 	double number2 = 0.0;
 	std::cin >> number2;
-
 	std::cout << "Введите число, соответствующее заданию.\n"
 		<< static_cast<int>(userInput::SUMM) << " - вычисление суммы чисел; "
 		<< static_cast<int>(userInput::DIFFERENCE) << " - вычисление разности чисел; "
