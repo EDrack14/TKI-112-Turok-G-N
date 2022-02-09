@@ -2,32 +2,32 @@
 
 /**
 *	\brief Вычисляет сумму чисел.
-*	\param a Первое число.
-*	\param b Второе число.
+*	\param number1 Первое число.
+*	\param number2 Второе число.
 *	\return Сумма чисел.
 */
 double getSumm(double number1, double number2);
 
 /**
 *	\brief Вычисляет разность чисел.
-*	\param a Первое число.
-*	\param b Второе число.
+*	\param number1 Первое число.
+*	\param number2 Второе число.
 *	\return Разность чисел.
 */
 double getDifference(double number1, double number2);
 
 /**
 *	\brief Вычисляет произведение чисел.
-*	\param a Первое число.
-*	\param b Второе число.
+*	\param number1 Первое число.
+*	\param number2 Второе число.
 *	\return Произведение чисел.
 */
 double getMultiplication(double number1, double number2);
 
 /**
 *	\brief Вычисляет частное от чисел.
-*	\param a Первое число.
-*	\param b Второе число.
+*	\param number1 Первое число.
+*	\param number2 Второе число.
 *	\return Частное от чисел.
 */
 double getQuotient(double number1, double number2);
