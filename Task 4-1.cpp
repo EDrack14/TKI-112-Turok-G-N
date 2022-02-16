@@ -37,17 +37,17 @@ void print(int* array, const size_t size, std::ostream& out = std::cout);
 *   \param array Массив.
 *   \param size Длина массива.
 */
-void findSummOfAllEvenElements(int* array, const size_t size);
+int findSummOfAllEvenElements(int* array, const size_t size);
 
 /**
-*   \brief Находит сумму всех чётных элементов.
+*   \brief Находит элементы массива, значения которых состоят из двух чисел.
 *   \param array Массив.
 *   \param size Длина массива.
 */
-void countAllTwoDigits(int* array, const size_t size);
+int countAllTwoDigits(int* array, const size_t size);
 
 /**
-*   \brief Находит сумму всех чётных элементов.
+*   \brief Находит и заменяет последнее отрицательный элемент массива на модуль первого элемента.
 *   \param array Массив.
 *   \param size Длина массива.
 */
@@ -99,9 +99,11 @@ int main()
 
 		print(myArray, size);
 		
-		findSummOfAllEvenElements(myArray, size);
+		const int summ = findSummOfAllEvenElements(myArray, size);
+		std::cout << "Сумма всех чётных элементов массива = " << summ << "\n";
 
-		countAllTwoDigits(myArray, size);
+		const int count = countAllTwoDigits(myArray, size);
+		std::cout << "Количество всех элементов с двухзначными числами = " << count << "\n";
 
 		exchangeLastNegativeElementByAbsOfFirst(myArray, size);
 		std::cout << "Заменим последнее отрицательное число на модуль первого элемента массива.\n";
@@ -176,9 +178,9 @@ void print(int* array, const size_t size, std::ostream& out)
 	out << "\n";
 }
 
-void findSummOfAllEvenElements(int* array, const size_t size)
+int findSummOfAllEvenElements(int* array, const size_t size)
 {
-	auto summ = 0;
+	int summ = 0;
 	for (size_t i = 0; i <= size; i++)
 	{
 		if (array[i] % 2 == 0)
@@ -186,32 +188,34 @@ void findSummOfAllEvenElements(int* array, const size_t size)
 			summ = summ + array[i];
 		}
 	}
-	std::cout << "Сумма всех чётных элементов массива = " << summ <<"\n";
+	return summ;
 }
 
-void countAllTwoDigits(int* array, const size_t size)
+int countAllTwoDigits(int* array, const size_t size)
 {
-	auto count = 0;
+	int count = 0;
 	for (size_t i = 0; i <= size; i++)
 	{
 		if ((array[i] >= -99 && array[i] <= -10) || (array[i] >= 10 && array[i] <= 99))
 		{
-			count = count + 1; 
+			count++; 
 		}
 	}
-	std::cout << "Количество всех элементов с двухзначными числами = " << count << "\n";
+	return count;
 }
 
 void exchangeLastNegativeElementByAbsOfFirst(int* array, const size_t size)
 {
-	for (size_t i = size - 1; i > 0; i--)
-	{
+	size_t i = 0;
+	auto negativeNumber = 0;
+	while (i < size)
+	{ 
 		if (array[i] < 0)
 		{
-			std::cout << "Последнее отрицательное число = " << array[i] << "\n";
-			array[i] = abs(array[0]);
-			break;
+			negativeNumber = i;
 		}
+		i++;
 	}
+	array[negativeNumber] = abs(array[0]);
 }
 
